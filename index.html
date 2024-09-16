@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="ja">
+<!--
+
+＜●＞ ＜●＞
+ﾐﾃﾏｽﾖ...
+ｺｺﾊ ﾐﾙﾅﾄ ｲｲﾏｼﾀﾖﾈ
+
+(◉ω◉｀)
+
+-->
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+        <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
+        <link rel="stylesheet" href="index.css" type="text/css">
+        <title>大阪メトロ鬼ごっこ</title>
+        <meta name="description" content="大阪メトロ鬼ごっこ ミッション発令用サイト">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Zen+Maru+Gothic:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Kaisei+Opti:wght@400;500;700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <header>
+            <div id="decoration1"><img src="background1.svg"></div>
+            <div class="phone">大阪メトロ</div>
+            <div class="phone">鬼ごっこ</div>
+            <div class="PC">大阪メトロ鬼ごっこ</div>
+        </header>
+        <div id="main">
+        <div id="clock"><span id="hour"></span> : <span id="minute"></span> : <span id="second"></span></div>
+        <div class="title">ミッション</div>
+        <div id="mission"><span id="challenge"></span></div>
+        <div id="limit">時間制限:<span id="time_limit"></span>分</div>
+        <div class="title">ゲーム開始駅</div>
+        <div id="start"><span id="start_point"></span></div>
+        <div class="title">ルール</div>
+        <ol id="rule">
+            <li>ゲームは常に鬼2チーム、逃走者1チームで行う。</li>
+            <li>ゲーム終了時、所持ポイントが高いチームが勝利となる。</li>
+            <li>ゲーム開始駅は、各チーム、大阪環状線内の駅からランダムに選ばれる。</li>
+            <li>ゲーム中の移動は、公共交通機関の利用または徒歩に限る。</li>
+            <li>ゲーム開始時、使用可能な公共交通機関は、大阪メトロ、大阪シティバス、いまざとライナーである。</li>
+            <li>鬼は逃走者をタッチすることで逃走者を捕まえられ、1ptを得る。</li>
+            <li>鬼が逃走者を捕まえた場合、鬼と逃走者は交代し、新たな鬼はその場で10分待機する。ミッションは新たに発令される。</li>
+            <li>逃走者は、大阪環状線の周上及び内部では常に、大阪環状線の外部では15分に1回、鬼に位置情報が共有される。</li>
+            <li>逃走者は、発令されたミッションを指定された時間内に達成する必要がある。</li>
+            <li>逃走者は、ミッションを達成したとき、その証拠となる写真を鬼に共有することでミッションの達成が認められる。</li>
+            <li>時間内にミッションを達成した場合、逃走者はミッション完了後15分間位置情報を隠せる。次のミッションは15分後の発令となる。</li>
+            <li>時間内にミッションを達成できなかった場合、逃走者は1ptを失い、直近の2戦に鬼であったチームが逃走者となる。ミッションは新たに発令される。</li>
+            <li>「駅」とは、鉄道及び軌道の駅のみを指す。</li>
+            <li>大阪メトロの駅へ行くミッションの場合、その達成は駅名標の写真でのみ認められる。ただし、撮影の際に列車を降りる必要はない。</li>
+            <li>以下の施設に立ち寄ると、実績を達成し、ボーナスを得ることができる。ただし、[逃]のついたものは逃走者のみ有効。</li>
+        </ol>
+        <div class="table_scroll">
+            <table id="achievement">
+                <tr>
+                    <th id="achievement_name">実績名</th>
+                    <th id="facility">施設</th>
+                    <th id="reward">ボーナス</th>
+                </tr>
+                <tr>
+                    <td>「おトク」な報酬</td>
+                    <td>激安自動販売機</td>
+                    <td>[逃]購入後30分間の位置情報秘匿</td>
+                </tr>
+                <tr>
+                    <td>動物たちの逆襲</td>
+                    <td>天王寺動物園</td>
+                    <td>[逃]位置情報の1回偽装</td>
+                </tr>
+                <tr>
+                    <td>カップルの束縛</td>
+                    <td>グラングリーン大阪</td>
+                    <td>[逃]15分間の相手の行動の停止</td>
+                </tr>
+                <tr>
+                    <td>賢者の集い</td>
+                    <td>適塾</td>
+                    <td>JR東海道線(神戸-京都)の永続的利用</td>
+                </tr>
+                <tr>
+                    <td>巡る円環</td>
+                    <td>天保山観覧車</td>
+                    <td>JR大阪環状線・関西線(JR難波-天王寺)の永続的利用</td>
+                </tr>
+                <tr>
+                    <td>奈良からの恩恵</td>
+                    <td>難波宮跡公園</td>
+                    <td>JR関西線(天王寺-奈良)の永続的利用</td>
+                </tr>
+                <tr>
+                    <td>長居に長居</td>
+                    <td>長居公園</td>
+                    <td>JR阪和線の永続的利用</td>
+                </tr>
+                <tr>
+                    <td>金の力</td>
+                    <td>造幣局</td>
+                    <td>JR東西線・学研都市線の永続的利用</td>
+                </tr>
+                <tr>
+                    <td>阪神タイガース</td>
+                    <td>道頓堀グリコ</td>
+                    <td>阪神の永続的利用</td>
+                </tr>
+                <tr>
+                    <td>池田</td>
+                    <td>西園寺OPスポット</td>
+                    <td>阪急の永続的利用</td>
+                </tr>
+                <tr>
+                    <td>中之島へようこそ</td>
+                    <td>中之島公会堂</td>
+                    <td>京阪の永続的利用</td>
+                </tr>
+                <tr>
+                    <td>大阪の下町</td>
+                    <td>スーパー玉出 玉出店</td>
+                    <td>南海の永続的利用</td>
+                </tr>
+                <tr>
+                    <td>かつての近鉄バファローズ</td>
+                    <td>京セラドーム</td>
+                    <td>近鉄の永続的利用</td>
+                </tr>
+            </table>
+        </div>
+        <div class="title">沿線情報</div>
+        <div><p>物理のレポートでここ作る時間なくなりました。すみません。</p></div>
+        <ul>
+            <li>ミックスジュース</li>
+            <li>激安自動販売機</li>
+            <li>天王寺動物園</li>
+            <li>グラングリーン大阪</li>
+            <li>天保山観覧車</li>
+            <li>難波宮跡公園</li>
+            <li>長居公園</li>
+            <li>造幣局</li>
+            <li>道頓堀グリコ</li>
+            <li>西園寺OPスポット</li>
+            <li>中之島公会堂</li>
+            <li>スーパー玉出 玉出店</li>
+            <li>京セラドーム</li>
+        </ul>
+        </div>
+        <div id="decoration2"><img src="background2.svg"></div>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+        <script src="index.js" defer></script>
+    </body>
+</html>

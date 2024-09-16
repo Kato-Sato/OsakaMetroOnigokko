@@ -1,0 +1,118 @@
+@charset "utf-8";
+html{
+    user-select: none;
+}
+header{
+    font-size: clamp(0px, 12vw, 90px);
+    font-family: "Dela Gothic One";
+    text-align: center;
+    color: #45818e;
+}
+#main{
+    margin: auto clamp(0px, 5vw, 48px);
+}
+ol{
+    color: #02133e;
+    list-style-position: outside;
+}
+.title{
+    font-size: clamp(0px, 8vw, 72px);
+    font-family: "Dela Gothic One";
+    color: #02133e;
+    margin-top: clamp(0px, 5vw, 48px);
+}
+#decoration1 img{
+    object-fit: cover;
+    height: 180px;
+    width: 100%;
+}
+#decoration2 img{
+    object-fit: fill;
+    height: 30px;
+    width: 100%;
+}
+#clock{
+    margin-top: clamp(0px, 5vw, 48px);
+    font-size: clamp(0px, 12vw, 72px);
+    font-family: "EB Garamond";
+    color: #02133e;
+    text-align: center;
+}
+#mission{
+    font-size: clamp(0px, 5vw, 48px);
+    font-family: "Kaisei Opti";
+    color: #02133e;
+    text-align: center;
+    margin: auto clamp(0px, 7.5vw, 72px) auto;
+}
+#limit{
+    font-size: clamp(0px, 5vw, 48px);
+    font-family: "Kaisei Opti";
+    color: #02133e;
+    text-align: center;
+    margin: 48px clamp(0px, 7.5vw, 72px) auto;
+}
+#start{
+    font-size: clamp(0px, 5vw, 48px);
+    font-family: "Kaisei Opti";
+    color: #02133e;
+    text-align: center;
+    margin: auto clamp(0px, 7.5vw, 72px) auto;
+}
+#rule{
+    margin: clamp(24px, 5vw, 48px);
+}
+
+/* table */
+.table_scroll{
+    overflow-x: scroll;
+}
+#achievement{
+    border-collapse: collapse;
+    width: clamp(480px, 90vw, 864px);
+}
+#achievement th, td{
+    border: solid 1px;
+    height: 36px;
+    padding: 8px;
+    color: #02133e;
+}
+#achievement_name{
+    width: 144px;
+}
+#facility{
+    width: 108px;
+}
+#reward{
+    width: 228px;
+}
+
+@media screen and (max-width:959px){
+    .PC{
+        display: none;
+    }
+}
+
+@media screen and (min-width:960px){
+    .title{
+        font-size: 72px;
+        margin-top: 48px;
+    }
+    .phone{
+        display: none;
+    }
+    #clock{
+        margin-top: 48px;
+        font-size: 72px;
+    }
+    #mission{
+        font-size: 48px;
+        margin: auto 72px auto;
+    }
+
+    /* table */
+    #achievement{
+        width: clamp(864px, 90vw, 960px);
+        margin: auto;
+    }
+}
