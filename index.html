@@ -24,6 +24,9 @@
         <link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Zen+Maru+Gothic:wght@300;400;500;700;900&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Kaisei+Opti:wght@400;500;700&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script src="index.js" defer></script>
     </head>
     <body>
         <header>
@@ -37,10 +40,11 @@
         <div class="title">ミッション</div>
         <div id="mission"><span id="challenge"></span></div>
         <div id="limit">時間制限:<span id="time_limit"></span>分</div>
-        <div class="title">ゲーム開始駅</div>
-        <div id="start"><span id="start_point"></span></div>
+        <!-- <div class="title">ゲーム開始駅</div>
+        <div id="start"><span id="start_point"></span></div> -->
         <div class="title">ルール</div>
         <ol id="rule">
+            <li>これは前回の使い回しであるのでドキュメント参照。</li>
             <li>ゲームは常に鬼2チーム、逃走者1チームで行う。</li>
             <li>ゲーム終了時、所持ポイントが高いチームが勝利となる。</li>
             <li>ゲーム開始駅は、各チーム、大阪環状線内の駅からランダムに選ばれる。</li>
@@ -65,74 +69,84 @@
                     <th id="reward">ボーナス</th>
                 </tr>
                 <tr>
-                    <td>「おトク」な報酬</td>
-                    <td>激安自動販売機</td>
-                    <td>[逃]購入後30分間の位置情報秘匿</td>
-                </tr>
-                <tr>
-                    <td>動物たちの逆襲</td>
-                    <td>天王寺動物園</td>
-                    <td>[逃]位置情報の1回偽装</td>
+                    <td>大阪環状線</td>
+                    <td>環状線駅舎</td>
+                    <td>20分間の逃走者の位置情報秘匿</td>
                 </tr>
                 <tr>
                     <td>カップルの束縛</td>
-                    <td>グラングリーン大阪</td>
-                    <td>[逃]15分間の相手の行動の停止</td>
+                    <td>難波八坂神社</td>
+                    <td>20分間の鬼の行動停止</td>
                 </tr>
                 <tr>
-                    <td>賢者の集い</td>
-                    <td>適塾</td>
-                    <td>JR東海道線(神戸-京都)の永続的利用</td>
+                    <td>みゃくみゃく様の力</td>
+                    <td>市役所前みゃくみゃく像</td>
+                    <td>15分間の鬼の地下鉄利用禁止</td>
                 </tr>
                 <tr>
-                    <td>巡る円環</td>
-                    <td>天保山観覧車</td>
-                    <td>JR大阪環状線・関西線(JR難波-天王寺)の永続的利用</td>
+                    <td>バス離れ</td>
+                    <td>堀江オレンジストリート</td>
+                    <td>15分間の鬼のバス利用禁止</td>
                 </tr>
                 <tr>
-                    <td>奈良からの恩恵</td>
-                    <td>難波宮跡公園</td>
-                    <td>JR関西線(天王寺-奈良)の永続的利用</td>
+                    <td>コスパ厨の若者</td>
+                    <td>アメリカ村の三角公園</td>
+                    <td>15分間の鬼の行動範囲制限(北・中央・西区)</td>
                 </tr>
                 <tr>
-                    <td>長居に長居</td>
-                    <td>長居公園</td>
-                    <td>JR阪和線の永続的利用</td>
+                    <td>韓流ブーム</td>
+                    <td>大阪コリアタウン</td>
+                    <td>38分間の鬼の日本語使用禁止</td>
                 </tr>
                 <tr>
-                    <td>金の力</td>
-                    <td>造幣局</td>
-                    <td>JR東西線・学研都市線の永続的利用</td>
+                    <td>幸運の招き猫</td>
+                    <td>クリスタ長堀の招き猫像</td>
+                    <td>ミッションの滞在時間半減</td>
                 </tr>
                 <tr>
-                    <td>阪神タイガース</td>
-                    <td>道頓堀グリコ</td>
-                    <td>阪神の永続的利用</td>
-                </tr>
-                <tr>
-                    <td>池田</td>
-                    <td>西園寺OPスポット</td>
+                    <td>阪急村の象徴</td>
+                    <td>NU茶屋町</td>
                     <td>阪急の永続的利用</td>
                 </tr>
                 <tr>
-                    <td>中之島へようこそ</td>
-                    <td>中之島公会堂</td>
+                    <td>大ドーム</td>
+                    <td>京セラドーム</td>
+                    <td>阪神の永続的利用</td>
+                </tr>
+                <tr>
+                    <td>商都大坂</td>
+                    <td>大阪証券取引所</td>
                     <td>京阪の永続的利用</td>
                 </tr>
                 <tr>
-                    <td>大阪の下町</td>
-                    <td>スーパー玉出 玉出店</td>
+                    <td>摩天楼</td>
+                    <td>あべのハルカス</td>
+                    <td>近鉄の永続的利用</td>
+                </tr>
+                <tr>
+                    <td>THE大阪</td>
+                    <td>通天閣</td>
                     <td>南海の永続的利用</td>
                 </tr>
                 <tr>
-                    <td>かつての近鉄バファローズ</td>
-                    <td>京セラドーム</td>
-                    <td>近鉄の永続的利用</td>
+                    <td>回る円環</td>
+                    <td>天保山観覧車</td>
+                    <td>JR大阪環状線の永続的利用</td>
+                </tr>
+                <tr>
+                    <td>JR</td>
+                    <td>ATC</td>
+                    <td>その他JR線の永続的利用</td>
+                </tr>
+                <tr>
+                    <td>祓の神</td>
+                    <td>住吉大社</td>
+                    <td>阪堺の永続的利用</td>
                 </tr>
             </table>
         </div>
         <div class="title">沿線情報</div>
-        <div><p>物理のレポートでここ作る時間なくなりました。すみません。</p></div>
+        <div><p>体調崩していてここ作る時間なくなりました。それとこのサイトも使いまわしです。すみません。</p></div>
         <ul>
             <li>ミックスジュース</li>
             <li>激安自動販売機</li>
@@ -149,9 +163,9 @@
             <li>京セラドーム</li>
         </ul>
         </div>
-        <div id="decoration2"><img src="background2.svg"></div>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-        <script src="index.js" defer></script>
+        <footer>
+            <div id="decoration2"><img src="background2.svg"></div>
+        </footer>
+        <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script> -->
     </body>
 </html>
